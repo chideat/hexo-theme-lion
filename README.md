@@ -22,7 +22,7 @@ Modify `theme` setting in `_config.yml` to `lion`.
 
 ### Fancybox
 
-Lion uses [Fancybox] to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.(Same as Landspcae)
+Lion uses [Fancybox] to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.(Same as Landscape)
 
 ```
 ![img caption](img url)
