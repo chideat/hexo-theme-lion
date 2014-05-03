@@ -1,0 +1,56 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <%- partial('post/gallery') %>
+    <% if (post.link || post.title){ %>
+      <header class="article-header">
+        <%- partial('post/title', {class_name: 'article-title'}) %>
+      </header>
+    <% } %>
+    <% if (index){ %>
+      <div class="article-preview-entry" itemprop="articleBody">
+        <%=: post.content | replace:/\<[^>]*\>/g,'' | truncate_words: 280 | truncate:300 %> ...
+      </div>
+      <footer class="article-preview-footer">
+        <%- partial('post/category') %>
+        <%- partial('post/tag') %>
+        <% if (post.comments && config.disqus_shortname){ %>
+          <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"></a>
+        <% } %>
+        <div class="article-preview-meta">
+          <%- partial('post/date', {class_name: 'article-date', date_format: 'YYYY-MM-DD'}) %>
+        </div>
+      </footer>
+    <% } else { %>
+      <footer class="article-footer">
+        <%- partial('post/category') %>
+        <%- partial('post/tag') %>
+        <div class="article-preview-meta">
+          <%- partial('post/date', {class_name: 'article-date', date_format: 'YYYY-MM-DD'}) %>
+        </div>
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        <% if (post.excerpt && index){ %>
+          <%- post.excerpt %>
+          <% if (theme.excerpt_link){ %>
+            <p class="article-more-link">
+              <a href="<%- config.root %><%- post.path %>#more"><%= theme.excerpt_link %></a>
+            </p>
+          <% } %>
+        <% } else { %>
+          <%- post.content %>
+        <% } %>
+      </div>
+    <% }%>
+  </div>
+  <% if (!index){ %>
+    <%- partial('post/nav') %>
+  <% } %>
+</article>
+
+<% if (!index && post.comments && config.disqus_shortname){ %>
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+<% } %>

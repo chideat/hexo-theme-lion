@@ -1,0 +1,34 @@
+# Header
+menu:
+  - name: about 
+    path: /about.html
+    icon: /images/about.png
+  - name: home
+    path: /
+    icon: /images/home.png
+  - name: archives
+    path: /archives
+    icon: /images/archives.png
+  - name: github
+    path: https://github.com/chinat
+    icon: /images/github.png
+  - name: rss
+    path: /atom.xml
+    icon: /images/rss.png
+
+# Content
+excerpt_link:
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+  - category
+  - tag
+  - recent
+
+# Miscellaneous
+google_analytics: UA-50564678-1
+favicon: /favicon.png
+twitter: 
+google_plus: chinaxiahaifeng@gmail.com

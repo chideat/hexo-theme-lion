@@ -1,0 +1,7 @@
+<div class='navbar menu'>
+    <% for (var i in theme.menu) { %>
+        <a href="<%- theme.menu[i].path %>" title="<%= theme.menu[i].name %>">
+            <div class="menu-action"><img src="<%= theme.menu[i].icon %>"></div>
+        </a>
+    <% } %>
+</div>

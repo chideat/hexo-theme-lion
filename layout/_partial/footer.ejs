@@ -1,0 +1,13 @@
+<footer id="footer">
+  <div class="footer-desc">
+      <% if (config.description) { %>
+          <blockquote><p><%= config.description %></p></blockquote>
+      <% } %>
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
